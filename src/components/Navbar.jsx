@@ -7,7 +7,7 @@ function Navbar() {
     <div>
         <nav className='flex justify-around bg-blue-400 shadow-xl p-2 mx-2 '>
             <div>
-                <p>FraNel company LTD</p>
+                <p><strong>FraNel company LTD </strong></p>
             </div>
             <div className='flex gap-4'>
                 <Link to='/Employee' >Employee</Link>
