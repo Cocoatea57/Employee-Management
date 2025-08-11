@@ -7,6 +7,7 @@ const useEmployeeStore = create((set) => ({
   // Initial state of employee
   employees: [
     {
+      
       firstName: "Frank",
       lastName: "Owusu",
       email: "frankowusu@email.com",

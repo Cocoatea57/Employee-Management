@@ -88,14 +88,15 @@ function Register() {
   }
 
   return (
-    <div className="border m-4 p-4 flex flex-col w-1/2">
+    <div className=" flex flex-col justify-center items-center  p-2 gap-2 h-screen">
+      <div className=" p-2 flex flex-col flex-wrap justify-center items-center w-1/3 p-2 gap-2  shadow-2xl shadow-blue-800 rounded-lg">
       <div className="text-center">
-        <h1>Add Employee</h1>
-        <h6>Fill details</h6>
+        <h1 className="text-2xl m-2 bg-white shadow-md w-full p-2">Add Employee</h1>
+        <h6 className="text-lg m-2">Fill details</h6>
       </div>
 
       <div>
-        <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col flex-wrap gap-2">
           <div>
             <label htmlFor="">First Name</label>
             <input
@@ -104,7 +105,7 @@ function Register() {
               value={firstName}
               name="firstname"
               onChange={handleFName}
-              className="border"
+              className="bg-white m-1 p-1 shadow-xl "
             />
           </div>
           <div>
@@ -115,7 +116,7 @@ function Register() {
               value={lastName}
               name="lastname"
               onChange={handleLName}
-              className="border"
+              className="bg-white m-1 p-1 shadow-xl"
             />
           </div>
           <div>
@@ -126,7 +127,7 @@ function Register() {
               value={email}
               name="email"
               onChange={handleEmail}
-              className="border"
+              className="bg-white m-1 p-1 shadow-xl"
             />
           </div>
           <div>
@@ -137,7 +138,7 @@ function Register() {
               value={role}
               name="role"
               onChange={handleRole}
-              className="border px-2"
+              className="bg-white m-1 p-1 px-2 shadow-xl"
             />
             <datalist id="roles">
               <option value="Senior Developer" />
@@ -153,7 +154,7 @@ function Register() {
               value={department}
               name="department"
               onChange={handleDepartment}
-              className="border px-2"
+              className="bg-white m-1 p-1 px-2 shadow-xl"
             />
             <datalist id="department">
               <option value="Software" />
@@ -170,7 +171,7 @@ function Register() {
               value={salary}
               name="salary"
               onChange={handleSalary}
-              className="border px-2"
+              className="bg-white m-1 p-1 px-2 shadow-xl"
             />
             <datalist id="salary">
               <option value="20000" />
@@ -184,14 +185,14 @@ function Register() {
             </datalist>
           </div>
           <div>
-            <label htmlFor="">Employee Age</label>
+            <label htmlFor="">Age</label>
             <input
               type="number"
               placeholder="Select Age"
               value={age}
               onChange={handleAge}
               name="age"
-              className="border px-2"
+              className="bg-white m-1 p-1 px-2 shadow-xl"
             />
           </div>
           <div>
@@ -202,7 +203,7 @@ function Register() {
               value={address}
               name="address"
               onChange={handleAddress}
-              className=" border px-2"
+              className=" bg-white m-1 p-1 px-2 shadow-xl"
             />
           </div>
           <div>
@@ -212,13 +213,14 @@ function Register() {
               accept="image/*"
               key={preview}
               onChange={handleImage}
-              className="border w-3/4"
+              className="bg-white m-1 p-1 file:p-1 file:rounded-lg  file:shadow-lg file:mr-2 file:border shadow-xl hover:file:cursor-pointer transition"
             />
           </div>
           <div>
-            <button type="submit">Add Employee</button>
+            <button type="submit" className="p-1 bg-blue-500 shadow-2xl hover:shadow-white hover:scale-110 transition-transform duration-200 rounded-md">Add Employee</button>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

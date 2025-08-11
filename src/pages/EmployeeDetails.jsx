@@ -19,26 +19,34 @@ function EmployeeDetails() {
 
   // Display the employee's details
   return (
-    <div>
-      <h2>Employee Details</h2>
-      <p>
-        <strong>Full Name:</strong> {employee.firstName} {employee.lastName}
-      </p>
-      <p>
-        <strong>Role:</strong> {employee.role}
-      </p>
-      <p>
-        <strong>Email:</strong> {employee.email}
-      </p>
-      <p>
-        <strong>Department:</strong> {employee.department}
-      </p>
-      <p>
-        <strong>Salary:</strong> ${employee.salary}
-      </p>
-      <p>
-        <strong>Hire Date:</strong> {employee.hireDate}
-      </p>
+    <div className="flex flex-col h-screen justify-center items-center">
+       <h2 className="m-6">Employee Details</h2>
+      <div className=" w-[500px] h-[510px] flex flex-col items-center gap-6 shadow-2xl" > 
+        <div className="flex items-center justify-center">
+          <img src={employee.preview} alt="image" className="shadow-2xl w-[310px] h-[300px] rounded-full" />
+        </div>
+      
+        <div className=" shadow-lg p-2 w-[70%]">
+          <p>
+          <strong>Full Name:</strong> <span className="shadow-xl shadow-white"> {employee.firstName} {employee.lastName}</span>
+        </p>
+        <p>
+          <strong>Role:</strong> {employee.role}
+        </p>
+        <p>
+          <strong>Email:</strong> {employee.email}
+        </p>
+        <p>
+          <strong>Department:</strong> {employee.department}
+        </p>
+        <p>
+          <strong>Salary:</strong> ${employee.salary}
+        </p>
+        <p>
+          <strong>Hired Date:</strong> {employee.hireDate}
+        </p>
+        </div>
+      </div>
     </div>
   );
 }
