@@ -1,8 +1,11 @@
 import React from 'react'
+import Register from './Register'
 
-function Manager() {
+function Manager({addNewEmployee}) {
   return (
-    <div>Manager</div>
+    <div>
+      <Register addNewEmployee={addNewEmployee} />
+    </div>
   )
 }
 

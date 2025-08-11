@@ -52,15 +52,14 @@ function App() {
           element={
             <Employee
               employees={employees}
-              addNewEmployee={addNewEmployee}
               editEmployee={editEmployee}
               deleteEmployee={deleteEmployee}
             />
           }
         />
-        <Route path="/Manager" element={<Manager />} />
+        <Route path="/" element={<Manager />} />
         <Route path="/LeavePage" element={<LeavePage />} />
-        <Route path="/Register" element={<Register />} />
+        <Route path="/Register" element={<Register addNewEmployee={addNewEmployee} employees={employees}/>} />
       </Routes>
     </Router>
   );
