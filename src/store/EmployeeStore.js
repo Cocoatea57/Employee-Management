@@ -16,7 +16,7 @@ const useEmployeeStore = create((set) => ({
       address: "St Palm Avenue",
       department: "Software",
       role: "Senior Developer",
-      salary: 15000,
+      salary: 15000 ,
       hireDate: new Date().toLocaleDateString(),
       id: uuid(),
     },
