@@ -1,13 +1,44 @@
-import React from "react";
+import {React,useState,  useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useEmployeeStore from "../store/EmployeeStore";
 
 function EmployeeDetails() {
   // employee list from zustand store
   const employees = useEmployeeStore((state) => state.employees);
+  const currentEmployee = useEmployeeStore((state) => state.currentEmployee)
+  const editEmployee = useEmployeeStore((state) => state.editEmployee)
+  const deleteEmployee = useEmployeeStore((state) => state.deleteEmployee)
 
+  const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [role, setRole] = useState("");
+    const [salary, setSalary] = useState(0);
+    const [image, setImage] = useState(null);
+    const [preview, setPreview] = useState("");
+    const [address, setAddress] = useState("");
+    const [department, setDepartment] = useState("");
+    const [age, setAge] = useState(0);
+   const [open,setOpen] = useState(false)
   // Use the useParams hook to get the 'id' from the URL
   const { id } = useParams();
+
+  useEffect(()=>{
+    if(currentEmployee){
+      setFirstName(currentEmployee.firstName)
+      setLastName(currentEmployee.lastName)
+      setAddress(currentEmployee.address)
+      setDepartment(currentEmployee.department)
+      setEmail(currentEmployee.email)
+      setRole(currentEmployee.role)
+      setAge(currentEmployee.age)
+      setSalary(currentEmployee.salary)
+      setPreview(currentEmployee.preview)
+      setImage(currentEmployee.image)
+
+
+    }
+  })
 
   // Find the employee with the matching id
   const employee = employees.find((emp) => emp.id === id);
@@ -47,9 +78,9 @@ function EmployeeDetails() {
         </p>
         </div>
         <button className="absolute left-230 bg-blue-300 shadow-xl shadow-red-500 
-        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-red-500 m-2 p-1">Remove</button>
+        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-red-500 m-2 p-1" onClick={()=> deleteEmployee(employee.id)}>Remove</button>
         <button className="absolute left-130 bg-green-300 shadow-xl shadow-green-600 
-        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-black m-2 p-1">Edit Details</button>
+        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-black m-2 p-1" onClick={()=> currentEmployee(employee)}>Edit Details</button>
       </div>
     </div>
   );

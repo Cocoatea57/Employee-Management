@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import EmployeeList from "./pages/EmployeeList";
 import EmployeeDetails from "./pages/EmployeeDetails";
+import SalaryChart from "./components/SalaryChart";
 
 function App() {
   return (

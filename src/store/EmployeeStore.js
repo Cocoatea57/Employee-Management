@@ -44,6 +44,7 @@ const useEmployeeStore = create((set) => ({
       employees: state.employees.map((employee) =>
         employee.id === employeeId ? { ...employee, ...newDetails } : employee
       ),
+      currentEmployee: null
     })),
 
   // delete employee

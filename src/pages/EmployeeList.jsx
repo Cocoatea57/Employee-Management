@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useEmployeeStore from "../store/EmployeeStore";
+import SalaryChart from "../components/SalaryChart";
 
 
 function EmployeeList() {
@@ -27,7 +28,9 @@ function EmployeeList() {
               </Link>
             </div>
             
-            
+            <div>
+             <SalaryChart/> 
+            </div>
 
 
           </div>
