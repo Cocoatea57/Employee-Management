@@ -1,7 +1,7 @@
 // src/store/employeeStore.js
 import { create } from "zustand";
 import { v4 as uuid } from "uuid";
-import dummy from '../assets/dummy.jpg'
+import dummy from "../assets/dummy.jpg";
 
 // Define the initial state and actions in the store
 const useEmployeeStore = create((set) => ({
@@ -16,11 +16,14 @@ const useEmployeeStore = create((set) => ({
       address: "St Palm Avenue",
       department: "Software",
       role: "Senior Developer",
-      salary: 15000 ,
+      salary: 15000,
       hireDate: new Date().toLocaleDateString(),
       id: uuid(),
     },
   ],
+
+  // Current employee selected
+  currentEmployee: null,
 
   // Add new employee
   addNewEmployee: (newEmployee) =>
