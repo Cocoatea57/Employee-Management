@@ -2,25 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useEmployeeStore from "../store/EmployeeStore";
 
+
 function EmployeeList() {
   // The employees state from the store
   const { employees } = useEmployeeStore();
 
   return (
-    <div>
-      <h2>Employee List</h2>
-      <ul>
+    <div className="">
+      <h2 className="text-center ">Employee List</h2>
+      
         {employees.map((employee) => (
-          <li key={employee.id}>
-            <Link to={`/employees/${employee.id}`}>
-              <p>
-                {employee.firstName} {employee.lastName}
-              </p>
-              <p>{employee.role}</p>
-            </Link>
-          </li>
+          <div key={employee.id} className="flex gap-4 shadow-2xl shadow-green-500 w-[400px] m-4 rounded-lg">
+            <div className="flex justify-center items-center m-2 ">
+                <img src={employee.preview} alt=""  className="w-[150px]"/>
+            </div>
+            <div className="flex flex-col gap-4 justify-center items-left">
+              <Link to={`/employees/${employee.id}`}>
+             <h1>Name: {employee.firstName}</h1>
+             </Link>
+             <h4>Role: {employee.role}</h4>
+             <p>Department: {employee.department}</p>
+            </div>
+            
+            
+
+
+          </div>
         ))}
-      </ul>
+      
     </div>
   );
 }
