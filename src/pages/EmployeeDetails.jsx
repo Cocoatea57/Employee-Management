@@ -46,6 +46,10 @@ function EmployeeDetails() {
           <strong>Hired Date:</strong> {employee.hireDate}
         </p>
         </div>
+        <button className="absolute left-230 bg-blue-300 shadow-xl shadow-red-500 
+        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-red-500 m-2 p-1">Remove</button>
+        <button className="absolute left-130 bg-green-300 shadow-xl shadow-green-600 
+        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-black m-2 p-1">Edit Details</button>
       </div>
     </div>
   );
