@@ -144,6 +144,10 @@ function Register() {
               <option value="Senior Developer" />
               <option value="Intermediate Developer" />
               <option value="Junior Developer" />
+              <option value="Senior Sales Manager"/>
+              <option value="Sales Personnel"/>
+              <option value="Accountant"/>
+              <option value="Product Designer"></option>
             </datalist>
           </div>
           <div>
