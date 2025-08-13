@@ -89,6 +89,8 @@ function EmployeeDetails() {
     setRole("");
     setSalary(0);
     setImage(null);
+    //close modal
+    setOpen(false)
   }
   // Find the employee with the matching id
   const employee = employees.find((emp) => emp.id === id);
