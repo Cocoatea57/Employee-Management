@@ -153,7 +153,7 @@ function Register() {
                 <option value="Sales Personnel" />
                 <option value="Accountant" />
                 <option value="HR" />
-                <option value="Product Designer"></option>
+                <option value="Teaching Fellow"/>
               </datalist>
             </div>
             <div>
@@ -222,10 +222,16 @@ function Register() {
               <input
                 type="file"
                 accept="image/*"
-                key={preview}
                 onChange={handleImage}
                 className="bg-white m-1 p-1 file:p-1 file:rounded-lg  file:shadow-lg file:mr-2 file:border shadow-xl hover:file:cursor-pointer transition"
               />
+               {preview && (
+                  <img
+                    src={preview}
+                    alt="Preview"
+                    className="mt-2 w-24 h-24 object-cover rounded border"
+                  />
+                )}
             </div>
             <div className="mx-auto mb-2">
               <button

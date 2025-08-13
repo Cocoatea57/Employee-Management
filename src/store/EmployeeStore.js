@@ -2,30 +2,35 @@
 import { create } from "zustand";
 import { v4 as uuid } from "uuid";
 import dummy from "../assets/dummy.jpg";
+import josh from '../assets/josh.jpg'
+import flora from '../assets/flora.jpg'
+import foster from '../assets/foster.jpg'
+import samg from '../assets/samg.jpg'
+import wbrandt from '../assets/WBrandt.jpg'
 
 // initial states and actions in the store
 const useEmployeeStore = create((set) => ({
   // Initial state of employees
   employees: [
     {
-      preview: dummy,
-      firstName: "Frank",
-      lastName: "Owusu",
-      email: "frankowusu@email.com",
+      preview: josh,
+      firstName: "Joshua",
+      lastName: "Doe",
+      email: "joshuadoe@gmail.com",
       age: 25,
       address: "St Palm Avenue",
       department: "Software",
       role: "Senior Developer",
-      salary: 15000,
+      salary: 20000 ,
       hireDate: new Date().toLocaleDateString(),
       id: uuid(),
     },
     {
-      preview: dummy,
-      firstName: "Nelson",
-      lastName: "Target",
-      email: "nel.target@email.com",
-      age: 30,
+      preview: samg,
+      firstName: "Sam",
+      lastName: "General",
+      email: "samgeneral@email.com",
+      age: 24,
       address: "123 Main Street",
       department: "Finance",
       role: "Accountant",
@@ -34,11 +39,11 @@ const useEmployeeStore = create((set) => ({
       id: uuid(),
     },
     {
-      preview: dummy,
-      firstName: "Sharon",
-      lastName: "Serwah",
-      email: "sha.serwah@email.com",
-      age: 22,
+      preview: foster,
+      firstName: "Foster",
+      lastName: "Frimpong",
+      email: "fosterfrimpong@email.com",
+      age: 28,
       address: "456 Oak Avenue",
       department: "Sales",
       role: "Senior Sales Manager",
@@ -47,11 +52,11 @@ const useEmployeeStore = create((set) => ({
       id: uuid(),
     },
     {
-      preview: dummy,
-      firstName: "Natasha",
-      lastName: "Ama",
-      email: "nat.ama@email.com",
-      age: 35,
+      preview: flora,
+      firstName: "Flora",
+      lastName: "Dadie",
+      email: "flowerflora@email.com",
+      age: 27,
       address: "789 Pine Road",
       department: "HR",
       role: "HR Director",
@@ -60,11 +65,11 @@ const useEmployeeStore = create((set) => ({
       id: uuid(),
     },
     {
-      preview: dummy,
-      firstName: "Nel",
-      lastName: "Frank",
-      email: "nel.cocoa@email.com",
-      age: 28,
+      preview: wbrandt,
+      firstName: "Williams",
+      lastName: "brandt",
+      email: "wbrandt@email.com",
+      age: 25,
       address: "321 Elm Street",
       department: "Software",
       role: "Intermediate Developer",

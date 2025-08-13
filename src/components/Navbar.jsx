@@ -10,7 +10,7 @@ function Navbar() {
         <div className="flex">
           <img src={logo} alt="franel company ltd" className="size-8" />
           <marquee className="shadow-white shadow-xl border-t-1 border-white px-2 rounded w-32">
-            <strong>Franel Co. Ltd - Employee Management System </strong>
+            <strong>Franel E-M-S </strong>
           </marquee>
         </div>
 

@@ -11,8 +11,8 @@ function EmployeeList() {
     <div className="flex flex-col md:flex-row p-4 gap-4">
       {/* Employee list */}
       <div className="w-full md:w-1/2">
-        <h2 className="text-center font-bold text-xl italic mb-4 text-slate-700">
-          Employee List
+        <h2 className="text-center font-bold text-xl italic mb-4 text-slate-700 animate-bounce">
+          Employees
         </h2>
 
         <div className="flex flex-col items-center">

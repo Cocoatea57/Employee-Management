@@ -97,7 +97,7 @@ function EmployeeDetails() {
       lastName,
       email,
       role,
-      salary: Number(salary),
+      salary,
       address,
       department,
       age: Number(age),
