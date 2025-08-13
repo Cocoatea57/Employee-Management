@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import useEmployeeStore from "../store/EmployeeStore";
 
 function Register() {
@@ -83,148 +83,160 @@ function Register() {
     setSalary(0);
     setImage(null);
 
-    //alert 
-    alert('Employee added successfully ✅')
+    //alert
+    alert("Employee added successfully ✅");
   }
 
   return (
     <div className=" flex flex-col justify-center items-center  p-2 gap-2 h-screen">
-      <div className=" p-2 flex flex-col flex-wrap justify-center items-center w-1/3 p-2 gap-2  shadow-2xl shadow-blue-800 rounded-lg">
-      <div className="text-center">
-        <h1 className="text-2xl m-2 bg-white shadow-md w-full p-2">Add Employee</h1>
-        <h6 className="text-lg m-2">Fill details</h6>
-      </div>
+      <div className="flex flex-col flex-wrap justify-center items-center w-1/3 p-2 gap-2  shadow-2xl shadow-blue-800 rounded-lg">
+        <div className="text-center">
+          <h1 className="text-2xl my-2 bg-white shadow-md p-1">
+          📝Registration Form
+          </h1>
+          <h6 className="text-lg m-2">Fill details to register new employee</h6>
+        </div>
 
-      <div>
-        <form onSubmit={handleSubmit} className="flex flex-col flex-wrap gap-2">
-          <div>
-            <label htmlFor="">First Name</label>
-            <input
-              type="text"
-              placeholder="Firstname"
-              value={firstName}
-              name="firstname"
-              onChange={handleFName}
-              className="bg-white m-1 p-1 shadow-xl "
-            />
-          </div>
-          <div>
-            <label htmlFor="">Last Name</label>
-            <input
-              type="text"
-              placeholder="Lastname"
-              value={lastName}
-              name="lastname"
-              onChange={handleLName}
-              className="bg-white m-1 p-1 shadow-xl"
-            />
-          </div>
-          <div>
-            <label htmlFor="">Email address</label>
-            <input
-              type="email"
-              placeholder="example@email.com"
-              value={email}
-              name="email"
-              onChange={handleEmail}
-              className="bg-white m-1 p-1 shadow-xl"
-            />
-          </div>
-          <div>
-            <label htmlFor="">Select Role</label>
-            <input
-              list="roles"
-              placeholder="Select role"
-              value={role}
-              name="role"
-              onChange={handleRole}
-              className="bg-white m-1 p-1 px-2 shadow-xl"
-            />
-            <datalist id="roles">
-              <option value="Senior Developer" />
-              <option value="Intermediate Developer" />
-              <option value="Junior Developer" />
-              <option value="Senior Sales Manager"/>
-              <option value="Sales Personnel"/>
-              <option value="Accountant"/>
-              <option value="Product Designer"></option>
-            </datalist>
-          </div>
-          <div>
-            <label htmlFor="">Department</label>
-            <input
-              list="department"
-              placeholder="Select Department"
-              value={department}
-              name="department"
-              onChange={handleDepartment}
-              className="bg-white m-1 p-1 px-2 shadow-xl"
-            />
-            <datalist id="department">
-              <option value="Software" />
-              <option value="Sales" />
-              <option value="Finance" />
-            </datalist>
-          </div>
-          <div>
-            <label htmlFor="">Salary</label>
-            <input
-              list="salary"
-              type="number"
-              placeholder="Select Salary"
-              value={salary}
-              name="salary"
-              onChange={handleSalary}
-              className="bg-white m-1 p-1 px-2 shadow-xl"
-            />
-            <datalist id="salary">
-              <option value="20000" />
-              <option value="30000" />
-              <option value="12000" />
-              <option value="40000" />
-              <option value="60000" />
-              <option value="25000" />
-              <option value="18000" />
-              <option value="15000" />
-            </datalist>
-          </div>
-          <div>
-            <label htmlFor="">Age</label>
-            <input
-              type="number"
-              placeholder="Select Age"
-              value={age}
-              onChange={handleAge}
-              name="age"
-              className="bg-white m-1 p-1 px-2 shadow-xl"
-            />
-          </div>
-          <div>
-            <label htmlFor="">Address</label>
-            <input
-              type="text"
-              placeholder="Digital address"
-              value={address}
-              name="address"
-              onChange={handleAddress}
-              className=" bg-white m-1 p-1 px-2 shadow-xl"
-            />
-          </div>
-          <div>
-            <label htmlFor="">Add image</label>
-            <input
-              type="file"
-              accept="image/*"
-              key={preview}
-              onChange={handleImage}
-              className="bg-white m-1 p-1 file:p-1 file:rounded-lg  file:shadow-lg file:mr-2 file:border shadow-xl hover:file:cursor-pointer transition"
-            />
-          </div>
-          <div>
-            <button type="submit" className="p-1 bg-blue-500 shadow-2xl hover:shadow-white hover:scale-110 transition-transform duration-200 rounded-md">Add Employee</button>
-          </div>
-        </form>
-      </div>
+        <div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col flex-wrap gap-2"
+          >
+            <div>
+              <label htmlFor="">First Name</label>
+              <input
+                type="text"
+                placeholder="Firstname"
+                value={firstName}
+                name="firstname"
+                onChange={handleFName}
+                className="bg-white m-1 p-1 shadow-xl "
+              />
+            </div>
+            <div>
+              <label htmlFor="">Last Name</label>
+              <input
+                type="text"
+                placeholder="Lastname"
+                value={lastName}
+                name="lastname"
+                onChange={handleLName}
+                className="bg-white m-1 p-1 shadow-xl"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Email address</label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                value={email}
+                name="email"
+                onChange={handleEmail}
+                className="bg-white m-1 p-1 shadow-xl"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Select Role</label>
+              <input
+                list="roles"
+                placeholder="Select role"
+                value={role}
+                name="role"
+                onChange={handleRole}
+                className="bg-white m-1 p-1 px-2 shadow-xl"
+              />
+              <datalist id="roles">
+                <option value="Senior Developer" />
+                <option value="Intermediate Developer" />
+                <option value="Junior Developer" />
+                <option value="Senior Sales Manager" />
+                <option value="Sales Personnel" />
+                <option value="Accountant" />
+                <option value="HR" />
+                <option value="Product Designer"></option>
+              </datalist>
+            </div>
+            <div>
+              <label htmlFor="">Department</label>
+              <input
+                list="department"
+                placeholder="Select Department"
+                value={department}
+                name="department"
+                onChange={handleDepartment}
+                className="bg-white m-1 p-1 px-2 shadow-xl"
+              />
+              <datalist id="department">
+                <option value="Software" />
+                <option value="Sales" />
+                <option value="Finance" />
+                <option value="HR" />
+              </datalist>
+            </div>
+            <div>
+              <label htmlFor="">Salary</label>
+              <input
+                list="salary"
+                type="number"
+                placeholder="Select Salary"
+                value={salary}
+                name="salary"
+                onChange={handleSalary}
+                className="bg-white m-1 p-1 px-2 shadow-xl"
+              />
+              <datalist id="salary">
+                <option value="20000" />
+                <option value="30000" />
+                <option value="12000" />
+                <option value="40000" />
+                <option value="60000" />
+                <option value="25000" />
+                <option value="18000" />
+                <option value="15000" />
+              </datalist>
+            </div>
+            <div>
+              <label htmlFor="">Age</label>
+              <input
+                type="number"
+                placeholder="Select Age"
+                value={age}
+                onChange={handleAge}
+                name="age"
+                className="bg-white m-1 p-1 px-2 shadow-xl"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Address</label>
+              <input
+                type="text"
+                placeholder="Digital address"
+                value={address}
+                name="address"
+                onChange={handleAddress}
+                className=" bg-white m-1 p-1 px-2 shadow-xl"
+              />
+            </div>
+            <div>
+              <label htmlFor="">Add image</label>
+              <input
+                type="file"
+                accept="image/*"
+                key={preview}
+                onChange={handleImage}
+                className="bg-white m-1 p-1 file:p-1 file:rounded-lg  file:shadow-lg file:mr-2 file:border shadow-xl hover:file:cursor-pointer transition"
+              />
+            </div>
+            <div className="mx-auto mb-2">
+              <button
+                type="submit"
+                className="p-1 bg-blue-500 border-.5 shadow-md shadow-gray-400 hover:shadow-white hover:scale-110 transition-transform duration-200 rounded-md cursor-pointer"
+              >
+                Add Employee
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
