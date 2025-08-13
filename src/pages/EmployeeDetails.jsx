@@ -77,7 +77,7 @@ function EmployeeDetails() {
   function handleSubmit(e){
     e.preventDefault()
     //replace new info with current one
-    addEmployee(currentEmployee.id, {...currentEmployee,email, firstName,lastName,address,preview,image,age,role,department})
+    addEmployee(currentEmployee.id, {...currentEmployee,email,salary, firstName,lastName,address,preview,image,age,role,department})
     // Reset form
     setAddress("");
     setAge(0);
@@ -132,7 +132,9 @@ function EmployeeDetails() {
         <button className="absolute left-230 bg-blue-300 shadow-xl shadow-red-500 
         rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-red-500 m-2 p-1" onClick={()=> deleteEmployee(employee.id)}>Remove</button>
         <button className="absolute left-130 bg-green-300 shadow-xl shadow-green-600 
-        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-black m-2 p-1" onClick={()=> currentEmployee(employee)}>Edit Details</button>
+        rounded-lg hover:scale-110 transition-transform font-bold cursor-pointer text-black m-2 p-1" onClick={()=> {currentEmployee(employee)
+          setOpen(true)
+        }}>Edit Details</button>
       </div>
     </div>
   );
