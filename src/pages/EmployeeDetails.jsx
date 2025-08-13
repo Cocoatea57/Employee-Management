@@ -8,6 +8,7 @@ function EmployeeDetails() {
   const currentEmployee = useEmployeeStore((state) => state.currentEmployee)
   const editEmployee = useEmployeeStore((state) => state.editEmployee)
   const deleteEmployee = useEmployeeStore((state) => state.deleteEmployee)
+  const addEmployee = useEmployeeStore ((state) => state.addEmployee)
 
   const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -38,8 +39,57 @@ function EmployeeDetails() {
 
 
     }
-  })
+  },[currentEmployee])
 
+    function handleFName(e) {
+    setFirstName(e.target.value);
+  }
+  function handleLName(e) {
+    setLastName(e.target.value);
+  }
+  function handleEmail(e) {
+    setEmail(e.target.value);
+  }
+  function handleAge(e) {
+    setAge(e.target.value);
+  }
+  function handleRole(e) {
+    setRole(e.target.value);
+  }
+  function handleSalary(e) {
+    setSalary(e.target.value);
+  }
+  function handleAddress(e) {
+    setAddress(e.target.value);
+  }
+  function handleDepartment(e) {
+    setDepartment(e.target.value);
+  }
+
+  function handleImage(e) {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setPreview(URL.createObjectURL(file));
+    }
+  }
+   
+  function handleSubmit(e){
+    e.preventDefault()
+    //replace new info with current one
+    addEmployee(currentEmployee.id, {...currentEmployee,email, firstName,lastName,address,preview,image,age,role,department})
+    // Reset form
+    setAddress("");
+    setAge(0);
+    setDepartment("");
+    setEmail("");
+    setFirstName("");
+    setPreview("");
+    setLastName("");
+    setRole("");
+    setSalary(0);
+    setImage(null);
+  }
   // Find the employee with the matching id
   const employee = employees.find((emp) => emp.id === id);
 
