@@ -54,6 +54,11 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    //validate forms
+    if(!(firstName && lastName && role && email&& age && salary && address && department && image )){
+      alert('fill all fields 🙁!!')
+     return;
+    }else{
     // Convert salary to number
     const salaryValue = Number(salary);
     const newEmployee = {
@@ -68,6 +73,7 @@ function Register() {
       image: image,
       preview: preview,
       id: uuid(),
+      hireDate: new Date().toLocaleDateString()
     };
 
     addNewEmployee(newEmployee);
@@ -87,11 +93,11 @@ function Register() {
 
     //alert
     alert("Employee added successfully ✅");
-  }
+  }}
 
   return (
-    <div className=" flex flex-col justify-center items-center  p-2 gap-2 h-screen">
-      <div className="flex flex-col flex-wrap justify-center items-center w-1/3 p-2 gap-2  shadow-2xl shadow-blue-800 rounded-lg">
+    <div className=" flex flex-wrap flex-col justify-center items-center  p-2 gap-2 h-screen">
+      <div className="flex flex-col flex-wrap justify-center items-center w-1/3 p-2 gap-2 shadow-2xl shadow-blue-800 rounded-lg">
         <div className="text-center">
           <h1 className="text-2xl my-2 bg-white shadow-md p-1">
           📝Registration Form
