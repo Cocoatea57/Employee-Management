@@ -2,11 +2,11 @@
 import { create } from "zustand";
 import { v4 as uuid } from "uuid";
 import dummy from "../assets/dummy.jpg";
-import josh from '../assets/josh.jpg'
-import flora from '../assets/flora.jpg'
-import foster from '../assets/foster.jpg'
-import samg from '../assets/samg.jpg'
-import wbrandt from '../assets/WBrandt.jpg'
+import josh from "../assets/josh.jpg";
+import flora from "../assets/flora.jpg";
+import foster from "../assets/foster.jpg";
+import samg from "../assets/samg.jpg";
+import wbrandt from "../assets/WBrandt.jpg";
 
 // initial states and actions in the store
 const useEmployeeStore = create((set) => ({
@@ -21,7 +21,7 @@ const useEmployeeStore = create((set) => ({
       address: "St Palm Avenue",
       department: "Software",
       role: "Senior Developer",
-      salary: 20000 ,
+      salary: 20000,
       hireDate: new Date().toLocaleDateString(),
       id: uuid(),
     },
@@ -92,6 +92,10 @@ const useEmployeeStore = create((set) => ({
         ...state.employees,
         {
           ...newEmployee,
+          salary:
+            typeof newEmployee.salary === "string"
+              ? Number(newEmployee.salary)
+              : newEmployee.salary,
           id: uuid(),
           hireDate: new Date().toLocaleDateString(),
         },

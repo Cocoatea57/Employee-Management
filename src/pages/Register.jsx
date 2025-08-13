@@ -54,12 +54,14 @@ function Register() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // Convert salary to number
+    const salaryValue = Number(salary);
     const newEmployee = {
       firstName: firstName,
       lastName: lastName,
       email: email,
       age: age,
-      Salary: salary,
+      salary: salaryValue,
       department: department,
       role: role,
       address: address,
