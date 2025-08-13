@@ -14,7 +14,7 @@ function Navbar() {
           </marquee>
         </div>
 
-        <div className="flex gap-6 shadow-lg">
+        <div className="flex md:gap-6 shadow-lg">
           <Link
             to="/"
             className="font-semibold shadow-white shadow-xl border rounded px-2 border-white hover:bg-green-500"
