@@ -108,7 +108,7 @@ function EmployeeDetails() {
   }
 
   if (!employee) {
-    return <h2>Employee not found!</h2>;
+    return <h2 className="text-center text-2xl">Employee not found!</h2>;
   }
 
   return (
